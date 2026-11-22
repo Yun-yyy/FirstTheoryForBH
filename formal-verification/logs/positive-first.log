@@ -1,0 +1,9 @@
+error: assertion failed
+  --> FirstTheory/formal-verification/material_proofs.rs:28:12
+   |
+28 |     assert(aa*gap == (aa*x-t*y)*(aa*x-t*y) + det*y*y)
+   |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ assertion failed
+
+verification results:: 21 verified, 1 errors
+error: aborting due to 1 previous error
+

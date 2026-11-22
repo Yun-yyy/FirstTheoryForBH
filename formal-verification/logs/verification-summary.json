@@ -1,0 +1,67 @@
+{
+  "utc": "2026-11-22T07:15:52.095064+00:00",
+  "version": "Verus\n  Version: 0.2026.11.02.8bf68ee\n  Profile: release\n  Platform: macos_aarch64\n  Toolchain: 1.99.1-aarch64-apple-darwin (overridden by environment variable RUSTUP_TOOLCHAIN)",
+  "z3": "Z3 version 4.16.0 - 64 bit",
+  "sha256_verifier": "483703c79cf57530a9864de2e69326740ee69162dd98b853aedb8273c74a06f6",
+  "sha256_rust_verify": "cfb7b5c00940fd20fa0aa395ed3551e12112f39bc7d848ea757945560a722805",
+  "sha256_z3": "edae32f9e37ea4b5bb35310d72f0e352d0dc07626cac4e9e30bc1ea9a5bc8efb",
+  "runs": [
+    {
+      "file": "material_proofs.rs",
+      "sha256": "3213a3c9f7d914dc2434c4c84f51b98d6b52fb9ea6e551245c7b507299abc7de",
+      "expected": "verified",
+      "exit": 0,
+      "verified": 32,
+      "errors": 0,
+      "check_passed": true
+    },
+    {
+      "file": "negative-controls/false_antibonding_improves_bond.rs",
+      "sha256": "d92897a356781f494b786c2f33d7fbc95d99231e3ce141b91a098ffe4200cb44",
+      "expected": "semantic rejection",
+      "exit": 1,
+      "verified": 0,
+      "errors": 1,
+      "check_passed": true
+    },
+    {
+      "file": "negative-controls/false_barrier_identity.rs",
+      "sha256": "bac81d9e83006d162f6ebc42c50f1e853d31ef0e976961ecdf03b689edd0326c",
+      "expected": "semantic rejection",
+      "exit": 1,
+      "verified": 0,
+      "errors": 1,
+      "check_passed": true
+    },
+    {
+      "file": "negative-controls/false_capacity_identifies_state.rs",
+      "sha256": "251706a3ffb46d4612c6435064bf0267ff6fc3d511ea434c9ffa864d99e54715",
+      "expected": "semantic rejection",
+      "exit": 1,
+      "verified": 0,
+      "errors": 1,
+      "check_passed": true
+    },
+    {
+      "file": "negative-controls/false_lower_forward_implies_lower_reverse.rs",
+      "sha256": "d898075d5f6fad23ebce0cac08747b09cd6fe39a98a90d9cf9cf5b2f91b5019b",
+      "expected": "semantic rejection",
+      "exit": 1,
+      "verified": 0,
+      "errors": 1,
+      "check_passed": true
+    },
+    {
+      "file": "negative-controls/false_unconditional_quantum_bound.rs",
+      "sha256": "bb6a86da070ea4845c30c65e0ddbe882abf6f1acb2fa7ce995b42aecfca680fe",
+      "expected": "semantic rejection",
+      "exit": 1,
+      "verified": 0,
+      "errors": 1,
+      "check_passed": true
+    }
+  ],
+  "all_checks_passed": true,
+  "task_source_escape_audit": "No explicit forbidden constructs found; dependencies are trusted.",
+  "sha256_runner": "250e0049d7d5290827edc7470b9f26478522a2afcb36f45715630bf1a2599ca1"
+}

@@ -1,0 +1,15 @@
+COMMAND: <workspace>/formal-verification/tooling/verus-arm64-macos/verus negative-controls/false_antibonding_improves_bond.rs
+EXIT: 1
+
+verification results:: 0 verified, 1 errors
+error: postcondition not satisfied
+ --> negative-controls/false_antibonding_improves_bond.rs:5:13
+  |
+3 | proof fn false_antibonding_improves_bond(nb: int, na: int, t: int)
+  |       ------------------------------------------------------------ at the end of the function body
+4 |     requires nb == 2, na == 0, t > 0,
+5 |     ensures (nb-(na+1))*t > (nb-na)*t,
+  |             ^^^^^^^^^^^^^^^^^^^^^^^^^ failed this postcondition
+
+error: aborting due to 1 previous error
+

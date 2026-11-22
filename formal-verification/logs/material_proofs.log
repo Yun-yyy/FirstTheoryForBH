@@ -1,0 +1,4 @@
+COMMAND: <workspace>/formal-verification/tooling/verus-arm64-macos/verus material_proofs.rs
+EXIT: 0
+
+verification results:: 32 verified, 0 errors

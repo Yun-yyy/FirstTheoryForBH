@@ -1,0 +1,7 @@
+Verus
+  Version: 0.2026.11.02.8bf68ee
+  Profile: release
+  Platform: macos_aarch64
+  Toolchain: 1.99.1-aarch64-apple-darwin (overridden by environment variable RUSTUP_TOOLCHAIN)
+
+Z3 version 4.16.0 - 64 bit

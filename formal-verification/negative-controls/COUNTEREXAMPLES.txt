@@ -1,0 +1,17 @@
+五个错误命题的独立反例
+
+1. false_barrier_identity
+   a=0,b=1,ts=2。左侧(2-0)-(2-1)=1；错误右侧a-b=-1。
+2. false_capacity_identifies_state
+   x=0,y=4。x,y非负，4x+y=4，但x不是1，y不是0。
+3. false_antibonding_improves_bond
+   nb=2,na=0,t=1。原S=2，加入一个反键电子后的S=1，不大于原S。
+4. false_lower_forward_implies_lower_reverse
+   a=0,b=0,ts=10；a2=0,b2=-5,ts2=8。正向10降至8，逆向10升至13。
+5. false_unconditional_quantum_bound
+   a=b=1,t=2,L=0,x=y=1。a-L=1>0，但Q=1+1-4=-2<0。
+   原命题遗漏了行列式非负条件：(a-L)(b-L)-t²=-3。
+
+这些反例同时在 material_proofs.rs 的 negative_control_witnesses 和
+forward_improves_reverse_worsens_witness 中以精确整数验证。
+因此负向日志并非仅依赖“求解器没有找到证明”。

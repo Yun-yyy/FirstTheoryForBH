@@ -1,0 +1,11 @@
+error: postcondition not satisfied
+ --> FirstTheory/formal-verification/negative-controls/false_barrier_identity.rs:4:13
+  |
+3 | proof fn false_barrier_identity(a: int, b: int, ts: int)
+  |       -------------------------------------------------- at the end of the function body
+4 |     ensures (ts-a) - (ts-b) == a-b,
+  |             ^^^^^^^^^^^^^^^^^^^^^^ failed this postcondition
+
+verification results:: 0 verified, 1 errors
+error: aborting due to 1 previous error
+

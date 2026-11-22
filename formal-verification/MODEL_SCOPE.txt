@@ -1,0 +1,19 @@
+验证范围与证据边界
+
+用户目标：在 Rust 中实际执行形式化证明，并解释 BH_Data_1_review_editorial_revision.docx 中的材料原理。
+
+交付对象：Verus 的 proof fn 及其验证日志，而不是只运行几个浮点样本。
+数学域：int 是无界数学整数；能量与振幅可各自选择一个正公分母。因此覆盖明确编码的有理参数，不宣称已形式化证明任意实数/复数的完备性、无限维谱定理、全电子薛定谔方程或真实材料的 DFT。
+
+Q1：二轨道厄米模型的有理能量下界。H=[[a,-t],[-t,b]]，振幅为 x+iy 与 u+iv。由 a-L>0 以及 (a-L)(b-L)-t²>=0，证明 <psi|H|psi> >= L<psi|psi>。后两项是可审计的代数证书条件，不是预设期待证明的能量不等式。
+Q2：对称特例 a=b=e，t>0，成键态 (1,1) 与反键态 (1,-1) 的期望能量为 e-t 和 e+t；任意有理振幅的期望值不低于 e-t。这是有限模型的变分结论。
+Q3：固定轨道模型的跃迁稳定化量 S=(n_b-n_a)t。移走一个成键电子或加入一个反键电子均令 S 减少 t。不同电子数的总能量比较还需电子库化学势；本命题不等于真实 B-H 解离能或放氢势垒的定量预测。
+T1：正反向势垒之差等于端点反应能；端点不变时，降低共同过渡态等量降低两个势垒而不改变反应能。
+T2：若端点也变化，降低正向势垒不能推出逆向势垒降低。给出明确反例，而不是把 SMT 无法证明误称为数学反驳。
+M1：物料守恒限定容量；若氢仅来自活性组分，h<=active<=total，则 h/total<=active/total，且把惰性质量加入分母只能降低同一 h 的质量分数。所有比值用正分母交叉相乘表达。
+M2：容量观测是多对一的简化映射 Q(x,y)=4x+y。构造非负有理相量 (1,0) 和 (0,4)，容量同为4但相量不同。该抽象反例仅否定“容量唯一决定相组成”的一般逻辑；不声称两者是同一实际 Mg-B-H 物料收支下的两种样品。
+M3：另外证明 Mg(BH4)2 -> MgH2+2B+3H2 的元素收支，再证明 MgH2 -> Mg+H2 的收支。元素守恒不证明路径发生、热力学有利或动力学可达。
+
+Word 对应：Q1-Q3 对应 Defects and the recovery pathway（P047）；T1-T2 对应 Design the operating catalyst 和 Direct hydrogen cycling；M1 对应 Define usable capacity and the comparison boundary；M2-M3 对应 Distinguish a recoverable intermediate from a persistent sink（P064）。
+
+可信基础：Verus 前端和编码、Z3、vstd 及 Rust 工具链。不是 Lean 内核可重放的独立证明证书。工作文件不使用 assume、admit、external_body 或跳过验证的属性；依赖库并不因此被证明无公理。

@@ -1,0 +1,17 @@
+COMMAND: <workspace>/formal-verification/tooling/verus-arm64-macos/verus negative-controls/false_lower_forward_implies_lower_reverse.rs
+EXIT: 1
+
+verification results:: 0 verified, 1 errors
+error: postcondition not satisfied
+ --> negative-controls/false_lower_forward_implies_lower_reverse.rs:7:13
+  |
+3 |   proof fn false_lower_forward_implies_lower_reverse(
+  |  _______-
+4 | |     a: int, b: int, ts: int, a2: int, b2: int, ts2: int)
+  | |________________________________________________________- at the end of the function body
+...
+7 |       ensures ts2-b2 < ts-b,
+  |               ^^^^^^^^^^^^^ failed this postcondition
+
+error: aborting due to 1 previous error
+
